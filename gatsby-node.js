@@ -78,5 +78,33 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
   })
 
-  return Promise.all([loadPosts, loadPages, loadTags])
+  //add another promise for gallery.js pages
+
+  const loadGalleries = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulGallery {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allContentfulGallery.edges.map(({ node }) => {
+        createPage({
+          path: node.slug,
+          component: path.resolve(`./src/templates/gallery.js`),
+          context: {
+            slug: node.slug
+          }
+        })
+      })
+
+      resolve()
+    })
+  })
+
+  return Promise.all([loadPosts, loadPages, loadTags, loadGalleries])
 }

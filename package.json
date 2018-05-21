@@ -27,8 +27,12 @@
     "gatsby-transformer-remark": "^1.7.41",
     "inquirer": "^5.2.0",
     "lodash": "^4.17.5",
+    "lodash.find": "^4.6.0",
     "path": "^0.12.7",
+    "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
+    "scrollprogress": "^3.0.2",
+    "smoothscroll-polyfill": "^0.4.3",
     "styled-components": "^3.2.5",
     "whatwg-fetch": "^2.0.4"
   },
