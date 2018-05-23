@@ -8,6 +8,8 @@ import Menu from '../components/Menu'
 import Footer from '../components/Footer'
 import favicon from '../images/favicon.ico'
 
+import '../stylesheets/style.scss'
+
 const Template = ({ children }) => {
   return (
     <div className="siteRoot">

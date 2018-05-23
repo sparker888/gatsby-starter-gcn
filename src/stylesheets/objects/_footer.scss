@@ -1,0 +1,103 @@
+/* ------- *
+*  Footer  *
+* ------- */
+
+//General Footer styling
+.footer {
+  background: $base;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.footer__outer {
+  max-width: $max;
+  padding: 3em 1em;
+  margin: 0 auto;
+  @include bp(medium) {
+    padding: 3.5em 2em;
+  }
+}
+
+.footer__inner {
+  border-top: 1px solid lighten($base,10%);
+  padding: 2em 0 0 0;
+  margin: 0 auto;
+  @include bp(medium) {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer__inner div {
+  width: 100%;
+  @include bp(medium) {
+    flex: 0 0 50%;
+  }
+}
+
+//Footer Info
+.footer__info {
+  h3 {
+    margin: 0 0 .75em 0;
+    a {
+      color: white !important;
+      text-decoration: none !important;
+    }
+  }
+  p {
+    color: lighten($base, 25%);
+    line-height: 1.25 !important;
+    margin-bottom: .75em;
+  }
+}
+
+//Footer Sitemap
+.footer__sitemap ul {
+  text-align: left;
+  margin: 2em 0 0 0;
+  @include bp(medium) {
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.footer__sitemap ul li {
+  display: inline-block;
+  margin: 0 1em .5em 0;
+  @include bp(medium) {
+    margin: 0 0 .5em 1em;
+  }
+}
+
+.footer__sitemap a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+//Foooter Icons
+.footer .icon {
+  fill: white;
+  display: inline-block;
+  height: 1.75rem;
+  width: 1.75rem;
+  margin: 0 0 -.75rem -.25rem;
+}
+
+.footer .icon--facebook {
+  margin-right: -.5rem;
+}
+.footer .icon--instagram {
+  margin-right: -.25rem;
+}
+
+//Contentful Wordmark
+.wordmark {
+  display: inline-block;
+  margin: 0 1rem 0 0;
+  img {
+    width: 85px;
+  }
+}

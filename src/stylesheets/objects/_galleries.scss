@@ -1,0 +1,125 @@
+/* ---------- *
+*  Galleries  *
+* ----------- */
+
+.galleries-list {
+  max-width: $max;
+  background: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2em 1em 4em;
+  @include bp(medium){
+    padding: 2em 2em 4em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    &:after {
+      content: "";
+      flex: 0 0 32%;
+    }
+    @supports (display: grid) {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-columns: 1fr 1fr 1fr;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.galleries-list li {
+  position: relative;
+  margin-bottom: 1em;
+  div { height: 100%; }
+  @include bp(medium){
+    flex: 0 0 32.5%;
+    margin: .5vw 0;
+    @supports (display: grid) {
+      margin: 0;
+      grid-column: span 1;
+      &:nth-child(6n + 1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      &:nth-child(6n + 5) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+  }
+}
+
+.galleries-list h3, .featured__list h3, .featured__newest h3 {
+  display: flex;
+  flex-fow: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: capitalize;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $base;
+  background: rgba(0,0,0,.7);
+  opacity: 0;
+  z-index: 1;
+}
+
+.galleries-list li:hover, .featured__list li:hover, .featured__newest:hover {
+  h3 {
+    opacity: 1;
+  }
+}
+
+//Category Navigation Buttons
+.category-navigation {
+  max-width: $max;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  padding: 2em 1em 1px 1em;
+  margin: 0 auto;
+  @include bp(medium){
+    padding: 2em 2em 1px 2em;
+  }
+  h2 {
+    text-transform: capitalize;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0 0 .5rem 0;
+    @include bp(medium){
+      font-size: 3.75em;
+    }
+  }
+}
+
+.category-navigation__links {
+  margin: 2em 0 1em;
+  display: flex;
+  flex-flow: row wrap;
+  li a {
+    margin: 0 1em .5em 0;
+    text-decoration: none;
+    font-size: 1em;
+    padding: .85em 1em;
+    cursor: pointer;
+    border: solid 1px $base;
+    border-radius: 2px;
+    &:hover {
+      color: $base;
+    }
+  }
+}
+
+.category-navigation__links .active {
+  background: $base;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}

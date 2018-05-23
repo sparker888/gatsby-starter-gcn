@@ -1,0 +1,169 @@
+/* ---------- *
+*  Investment  *
+* ----------- */
+
+//Intro Image and Title
+.intro--investment {
+  margin: 0 auto;
+  text-align: center;
+  @include bp(medium){
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 2em 0 0;
+    position: relative;
+    z-index: 99;
+  }
+}
+
+.intro--investment__image {
+  max-width: $max;
+  div { max-height: 750px; }
+  width: 100%;
+  margin: 0 auto;
+  @include bp(medium){
+    width: 66.666%;
+    margin: 0 auto -10em;
+    padding: 0 2em;
+  }
+}
+
+//Tabs
+.tabs {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  @include bp(medium){
+    padding: 10em 0 0;
+  }
+  h2 {
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    position: relative;
+    background: $secondary;
+    padding: 2rem 0 0;
+    @include bp(medium){
+      font-size: 3.75em;
+      margin: -10rem auto 0;
+      padding: 12rem 0 0;
+    }
+  }
+}
+
+//Tabs Header
+.tabs-header {
+  background: $secondary;
+}
+
+.tab-list {
+  display: inline-flex;
+  flex-flow: row;
+  justify-content: center;
+  z-index: 99;
+  margin: 2em auto 3em;
+  @include bp(medium){
+    margin: 2em auto 4em;
+  }
+}
+
+.tab {
+  font-size: 1em;
+  padding: 1em;
+  margin: 0 .5em;
+  cursor: pointer;
+  border: solid 1px $base;
+  border-radius: 2px;
+}
+
+.tab--selected {
+  background: $base;
+  color: white;
+  &:focus {
+    outline: none;
+  }
+}
+
+//Tab Panel Content
+.tab-panel__content {
+  background: $secondary;
+}
+
+.tab-panel__container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: $max;
+  margin: 0 auto;
+  padding: 0 1em 2em;
+  @include bp(medium){
+    padding: 0 2em 3em;
+  }
+  p {
+    margin: 0 0 2em 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  .cover {
+    margin: 0 0 2em 0;
+  }
+  blockquote {
+    padding: 2em;
+    margin: 2em 0;
+    background: darken($secondary,5%);
+    h1,h2,h3 {
+      font-weight: bold;
+      margin: 0 0 2em 0;
+      line-height: 1.2;
+    }
+    ul li {
+      text-align: left;
+      list-style: disc;
+      list-style-position: inside;
+      line-height: 1.5;
+    }
+  }
+}
+
+.tab-panel .sidebar {
+  width: 100%;
+  @include bp(medium){
+    flex: 0 0 47.5%;
+  }
+}
+
+.tab-panel .main {
+  width: 100%;
+  text-align: left;
+  @include bp(medium){
+    flex: 0 0 47.5%;
+  }
+}
+
+//Investment Slider
+.slider--investment {
+  margin: 0 auto 4em;
+  position: relative;
+  h3 {
+    text-align: center;
+    font-size: 2em;
+    padding: 0 1em;
+    margin: 1.5em 0;
+    font-weight: bold;
+    color: $base;
+  }
+  .slick-slide {
+    padding: .25em;
+  }
+  .slick-list {
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+}

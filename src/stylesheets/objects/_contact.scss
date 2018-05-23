@@ -1,0 +1,356 @@
+/* ------- *
+* Contact  *
+* ------- */
+
+.contact {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro--contact {
+  width: 100%;
+  position: relative;
+  margin: 0 0 -50px 0;
+  @include bp(medium) {
+    margin: 0 0 -10vh 0;
+  }
+  div { max-height: 750px; }
+  h2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    z-index: 2;
+    color: white;
+    @include bp(medium) {
+      font-size: 3.75em;
+    }
+  }
+  &:before {
+    content: '';
+    background: rgba(0,0,0,.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.intro--contact__image {
+  div {
+    @supports (object-fit: cover) {
+      max-height: 1000px;
+    }
+  }
+}
+
+.contact-info {
+  background: white;
+  max-width: $max;
+  margin: 0 1em;
+  position: relative;
+  z-index: 2;
+  @include bp(medium){
+    margin: 0 2em;
+  }
+}
+
+.social {
+  padding: 0 1em 1em;
+  @include bp(medium){
+    padding: 2em 0 0 0;
+  }
+  h3 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+  }
+  ul {
+    margin: 0 0 2em 0;
+  }
+  ul li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+}
+
+.contact .icon {
+  fill: $base;
+  display: inline-block;
+  height: 1.75rem;
+  width: 1.75rem;
+  margin: 0 .25em 0 0;
+  position: relative;
+  top: .5em;
+}
+
+.contact a:hover .icon {
+  fill: lighten($base,25%);
+}
+
+.contact .icon--facebook {
+  margin-left: -.5rem;
+  margin-right: -.1rem;
+}
+.contact .icon--instagram {
+  margin-left: -.25rem;
+}
+
+//General Form Styling
+.form {
+  margin: 0 0 2em 0;
+  z-index: 2;
+}
+
+.form .form__container {
+  position: relative;
+  width: 100%;
+  background: white;
+  padding: 2em 1em 1em;
+  @include bp(medium){
+    padding: 2em;
+  }
+}
+
+div[class*='form__optional']{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.form .form__optional {
+  display: flex;
+}
+
+.form__name, .form__email, .form__reason, .form__message, .form__location, .form__source  {
+  background: $secondary;
+  padding: 1em;
+  font-size: 1em;
+  margin: 0 0 1em 0;
+  border-radius: 2px;
+  width: 100%;
+  color: $base;
+  @include bp(medium){
+    flex: 0 0 49%;
+  }
+}
+
+.form__guests, .form__budget {
+  text-align: left;
+  padding: .5em 0;
+  width: 100%;
+  @include bp(medium){
+    flex: 0 0 49%;
+  }
+  label {
+    font-size: 1em;
+    color: gray;
+  }
+  span {
+    font-weight: bold;
+    float: right;
+  }
+}
+
+//Range Input Styling
+.form input[type=range] {
+  -webkit-appearance: none;
+  border-radius: 2px;
+  width: 100%;
+  height: 10px;
+  background: darken($secondary,5%);
+  margin: 1em 0 2em 0;
+}
+
+/* WebKit/Blink */
+.form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: $base;
+  cursor: move;
+  cursor: grab;
+  cursor: -webkit-grab;
+  &:active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+  }
+}
+
+/* Firefox */
+.form input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: $base;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  &:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+  }
+}
+
+/* IE */
+.form input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: $base;
+  cursor: move;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+//Form Reason
+.form__reason, .form__source {
+  background: $secondary url('../images/arrows.svg') no-repeat 97% 0 !important;
+  cursor: pointer;
+}
+
+select, select option {
+  color: $base;
+}
+
+select:invalid,select option[value=""] {
+  color: gray;
+}
+
+//Form Date
+.form__date {
+  width: 100%;
+  @include bp(medium){
+    flex: 0 0 49%;
+  }
+  .react-datepicker-wrapper {width: 100%;}
+  .react-datepicker__input-container {width: 100%;}
+  input {
+    color: $base;
+    cursor: pointer;
+    width: 100%;
+    background: $secondary url('../images/calendar.svg') no-repeat 97% 0 !important;
+    padding: 1em;
+    font-size: 1em;
+    margin: 0 0 1em 0;
+    border-radius: 2px;
+  }
+}
+
+.react-datepicker__day--keyboard-selected, .react-datepicker__day--selected {
+  background: $base !important;
+}
+.react-datepicker {
+  font-family: $sans;
+}
+
+//Form Message
+.form__message {
+  font-size: 1em;
+  resize: none;
+  overflow: auto;
+  height: 300px;
+  flex: 0 0 100% !important;
+}
+
+//Form Submit Button
+.form .form__submit {
+  font-size: 1em;
+  background: $base;
+  color: white;
+  border-radius: 2px;
+  padding: 1em;
+  width: 100%;
+  @include bp(medium){
+    width: auto !important;
+    padding: 1em 2em;
+    flex: none;
+  }
+}
+
+//Success Modal
+.open--modal .container {
+  &:after {
+    visibility: visible;
+    opacity: .8;
+    z-index: 1000;
+  }
+}
+
+.modal--contact {
+  background: white;
+  padding: 2.5em 2em;
+  min-width: 75%;
+  border-radius: 2px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  @include bp(medium){
+    min-width: inherit;
+    max-width: 400px;
+  }
+}
+
+.modal--contact p {
+  margin: 0 auto 2em auto;
+  max-width: 600px;
+}
+
+.modal--contact__okay {
+  font-size: 1em;
+  background: $base;
+  color: white;
+  border-radius: 2px;
+  padding: 1em 2em;
+  margin: 0 auto;
+}
+
+.modal--contact__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.open--modal .modal--contact {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1001;
+}
+
+//Honeypot field
+.message2 {
+ height: 1px;
+ width: 1px;
+ position: absolute;
+ left: -1px;
+}
+
+//Show and Hide Optional optionalQuestions
+.form .form__optional {
+  display: none;
+}
+
+.form .form__optional--visible {
+  display: flex;
+}

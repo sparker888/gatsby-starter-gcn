@@ -78,7 +78,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
   })
 
-  //add another promise for gallery.js pages
+  //  Add another promise for gallery.js pages
 
   const loadGalleries = new Promise((resolve, reject) => {
     graphql(`
